@@ -4,8 +4,10 @@
 
 def canUnlockAll(boxes):
     """ Determines if all the boxes can be opened. """
-    key = []
-    for i in boxes[0]:
-        if key == boxes[i]:
-            return False
-    return True
+    keys = [0]
+    for key in keys:
+        for box in boxes[key]:
+            if box not in keys:
+                if box < len(boxes):
+                    keys.append(box)
+    return len(keys) == len(boxes):
